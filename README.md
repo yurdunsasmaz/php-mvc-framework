@@ -4,16 +4,26 @@ We developed a framework
 exxxxx
 
 page name: "index"
+
 Routing -> APP/config/routing.php  
-routing : App::get('/index', false);
-modules : new module  create in  app/modules/modulename  any folder name . My choice folder name is  "home" .
-Create  home folder in "controller" folder  ,
-Create home folder in  "model" folder ,
-Create  home folder in  "view" folder ,
+
+routing : App::get('/index', false)
+
+modules : new module  create in  app/modules/modulename  any folder name 
+
+My choice folder name is  "home" 
+
+Create  home folder in "controller" folder  
+
+Create home folder in  "model" folder 
+
+Create  home folder in  "view" folder 
 
 Create  homeController.php file in controller folder.(Traffic between Model and View)
+
 Create  homeModel.php file in model folder.(DB transactions)
-Create  homeView.php file in view folder.
+
+Create  homeView.php file in view folder
 
 
 Controller in :
