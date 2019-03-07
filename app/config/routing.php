@@ -2,4 +2,4 @@
 
 
 App::get('/');
-App::get('/anasayfa', false);
+App::get('/index', false);
