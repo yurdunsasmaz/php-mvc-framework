@@ -43,14 +43,18 @@ class DB {
 	*/
 	public static function init()
 	{
-		self::$pdo = new PDO(
-			'mysql:host=' . MYSQL_HOST .';dbname=' . MYSQL_DB,
-			MYSQL_USER,
-			MYSQL_PASS
-		);
+		$connection = 'mysql:host=' . MYSQL_HOST . ';dbname='.MYSQL_DB;
+		$user = MYSQL_USER;
+		$pass = MYSQL_PASS;
 
-		self::$pdo->exec('SET NAMES `' . self::$charset . '`');
-		self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+		try {
+		    self::$pdo = new PDO($connection,$user,$pass);
+		    self::$pdo->exec('SET NAMES `' . self::$charset . '`');
+		    self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+		}
+		catch (PDOException $e) {
+		    die('Connection error !');
+		}
 
 		return self::$pdo;
 	}
